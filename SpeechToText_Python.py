@@ -16,7 +16,7 @@ def Translate_hindi_to_english(text):
     english_text = translate(text,"en-us")
     return english_text
     
-def Speech_ro_text_python():   # agent listion and translet into text
+def Speech_to_text_python():   # agent listion and translet into text
     recognizer = sr.Recognizer()
     recognizer.dynamic_energy_threshold = False
     recognizer.energy_threshold = 34000
@@ -53,17 +53,9 @@ def Speech_ro_text_python():   # agent listion and translet into text
         stt_thread = threading.Thread(target=Speech_ro_text_python)
         print_thread = threading.Thread(target=print_loop)
         stt_thread.start()
-        print_loop.start()
+        print_thread.start()
         stt_thread.join()
-        print_loop.join()
+        print_thread.join()
         
-Speech_ro_text_python()
-    
-    
-    
-    
-    
-    
-    
-    
+Speech_to_text_python()
     
